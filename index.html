@@ -24,6 +24,7 @@
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
+
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About Me</a></li>
@@ -38,8 +39,11 @@
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#week9">09</a></li>
                     <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#finalproject">Final</a></li>
                 </ul>
+
             </div>
         </nav>
+
+
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- home-->
@@ -99,6 +103,8 @@
                     </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 1-->
             <section class="resume-section" id="week1">
                 <div class="resume-section-content">
@@ -123,6 +129,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 2-->
               <section class="resume-section" id="week2">
                 <div class="resume-section-content">
@@ -152,6 +160,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 3-->
             <section class="resume-section" id="week3">
                 <div class="resume-section-content">
@@ -180,6 +190,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 4-->
             <section class="resume-section" id="week4">
                 <div class="resume-section-content">
@@ -208,6 +220,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 5-->
             <section class="resume-section" id="week5">
                 <div class="resume-section-content">
@@ -234,6 +248,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 6-->
             <section class="resume-section" id="week6">
                 <div class="resume-section-content">
@@ -256,6 +272,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 7-->
             <section class="resume-section" id="week7">
                 <div class="resume-section-content">
@@ -289,6 +307,8 @@
                 </div>
             </section>
             <hr class="m-0" /> 
+
+
             <!-- Week 8-->
             <section class="resume-section" id="week8">
                 <div class="resume-section-content">
@@ -299,56 +319,57 @@
                             <div class="subheading mb-3">Controlling an LED</div>
                             <p>[unfinished documentation] <br> For this assingment I followed the tutorial on how to wirelessly control an LED through a website. In class we learned how to do that locally with our IP addresses, and toward the end we were given the freedom to play around with Firebase, and I continued on to embed the ON/OFF button code given here into my website. </p>
                             <br>
-<body>
-    <button id="turn-on" name="turnon">Turn On </button>
-    <button id="turn-off" name="turnoff">Turn Off </button>
+                            
+                            <body>
+                                <button id="turn-on" name="turnon">Turn On </button>
+                                <button id="turn-off" name="turnoff">Turn Off </button>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+                                <!-- The core Firebase JS SDK is always required and must be listed first -->
+                                <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+                                <!-- TODO: Add SDKs for Firebase products that you want to use
+                                https://firebase.google.com/docs/web/setup#available-libraries -->
+                                <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
 
-    <script>
-    // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyAF9uYbc9520iy8siDOqnX93z74Dl7KNHc",
-    authDomain: "esp32-led-24dc5.firebaseapp.com",
-    databaseURL: "https://esp32-led-24dc5-default-rtdb.firebaseio.com",
-    projectId: "esp32-led-24dc5",
-    storageBucket: "esp32-led-24dc5.appspot.com",
-    messagingSenderId: "289612077298",
-    appId: "1:289612077298:web:7afd4cc5e3a574d674586b",
-    measurementId: "G-R36M25QMRH"
-  };
+                                <script>
+                                 // Your web app's Firebase configuration
+                                        var firebaseConfig = {
+                                        apiKey: "AIzaSyAF9uYbc9520iy8siDOqnX93z74Dl7KNHc",
+                                        authDomain: "esp32-led-24dc5.firebaseapp.com",
+                                        databaseURL: "https://esp32-led-24dc5-default-rtdb.firebaseio.com",
+                                        projectId: "esp32-led-24dc5",
+                                        storageBucket: "esp32-led-24dc5.appspot.com",
+                                        messagingSenderId: "289612077298",
+                                        appId: "1:289612077298:web:7afd4cc5e3a574d674586b",
+                                        measurementId: "G-R36M25QMRH"
+                                        };
     
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+                                        // Initialize Firebase
+                                        firebase.initializeApp(firebaseConfig);
 
-    // Get a database reference to our blog
-    var ref = firebase.database().ref("/");
+                                        // Get a database reference to our blog
+                                        var ref = firebase.database().ref("/");
 
-    // make the buttons call the function below 
-    document.getElementById('turn-on').addEventListener('click', turnOn, false);
-    document.getElementById('turn-off').addEventListener('click', turnOff, false);
+                                        // make the buttons call the function below 
+                                        document.getElementById('turn-on').addEventListener('click', turnOn, false);
+                                        document.getElementById('turn-off').addEventListener('click', turnOff, false);
 
-    function turnOn(){
-        console.log("turning on");
-        ref.update({
-            "LED_STATUS": "ON"
-        });
-    }
+                                        function turnOn(){
+                                            console.log("turning on");
+                                            ref.update({
+                                                "LED_STATUS": "ON"
+                                            });
+                                        }
 
-    function turnOff(){
-        console.log("turning off");
-        ref.update({
-            "LED_STATUS": "OFF"
-        });
-    }   
-    </script>
+                                        function turnOff(){
+                                            console.log("turning off");
+                                            ref.update({
+                                                "LED_STATUS": "OFF"
+                                            });
+                                        }   
+                                        </script>
 
-</body>
+                                    </body>
                     <p> <br> With the buttons above, my friend Ryan was able to turn the LED on and off even though he is 25 miles away. He did an amazing job- thanks for helping me Ryan :)</p>
 
                     <iframe src=https://create.arduino.cc/editor/jacihinman/eefad7b7-3b26-4914-953b-ac8141ac7872/preview?embed style="height:510px;width:100%;margin:10px 0" frameborder=0></iframe>
@@ -361,6 +382,8 @@
                 </div>
             </section>
             <hr class="m-0" />
+
+
             <!-- Week 9-->
             <section class="resume-section" id="week9">
                 <div class="resume-section-content">
@@ -392,6 +415,7 @@
             </section>
             <hr class="m-0" />
             
+
    <!-- Final Project-->
             <section class="resume-section" id="finalproject">
                 <div class="resume-section-content">
@@ -456,13 +480,16 @@
                     </div>
                         <div class="flex-grow-1">
                             <div class="subheading mb-3">Documentation</div>
-
+                            <p>
+                            When I first started brainstorming for this project, I did not want to build an ordinary plane. Don’t get me wrong, commercial planes still look sick– but I wanted to challenge myself to make something different. My design started with a flat wing pattern. Kind of like a stingray shaped plane. 
                             <iframe width="415.5" height="259" src="https://www.youtube.com/embed/4orwq08r8BY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
                             <br>
                             <br>
+                            As I continued to research, my searches led me to RC Planes and I fell in love. My first sketch was simple. 2 wings, and a center box for the electronics. 
                             <img src="assets/img/planesketch.jpg" alt="plane sketch" style="width:368px;height:318.375px;">
                             <br>
                             <br>
+                            Using the websites I linked above, I was able to realistically simulate my plane digitally. Estimating its wing span and weight to calculate just how big I wanted to make Olivia. The smaller the plane, the harder to fly. 
                             <img src="assets/img/diagram.jpg" alt="diagram" style="width:534px;height:237px;">
                             <br>
                             <br>
@@ -528,6 +555,7 @@
                             <img src="assets/img/modpoge.jpg" alt="flight simulator" style="width:174.6px;height:331.2px;">
                             <br>
                             <br>
+                        </p>
                         </div>
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
